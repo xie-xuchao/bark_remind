@@ -7,9 +7,11 @@
 var url = "";
 var date = new Date();
 var timeString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+((date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes());  
+var title = timeString + "  上班打卡提醒/";
+var content = "，速度打卡"
 const urlList = [
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc速度打卡1 "},
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡2 "}
+{name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"},
+{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"}
 ];
 
 const method = "GET";
@@ -17,9 +19,9 @@ const headers = {"Field": "test-header-param"};
 const data = {"info": "abc"};
 
 for(var i=0,l=urlList.length;i<l;i++){
-url = encodeURI(urlList[i].urll + timeString);
+url = urlList[i].urll + title + urlList[i].name + content;
 const myRequest = {
-    url: url,
+    url: encodeURI(url),
     method: method, // Optional, default GET.
     headers: headers, // Optional.
     body: JSON.stringify(data) // Optional.
