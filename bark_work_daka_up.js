@@ -12,11 +12,11 @@ QuantumultX 本地脚本配置:
 0 9 * * * bark_work_daka_up.js
 
 */
+var $nobyda = nobyda();
 var server_addr = "http://ddns.cloudslave.cn:8081/";
 var key = "";
 var title = "";
 var content = "";
-
 var process = {
   total: 0,
   result: [
