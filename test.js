@@ -5,10 +5,11 @@
  *
  */
 var url = "";
-var date = new Date().toLocaleString();
+var date = new Date();
+var timeString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+((date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes());  
 const urlList = [
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡1"},
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡2"}
+{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc速度打卡1 "},
+{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡2 "}
 ];
 
 const method = "GET";
@@ -16,7 +17,7 @@ const headers = {"Field": "test-header-param"};
 const data = {"info": "abc"};
 
 for(var i=0,l=urlList.length;i<l;i++){
-url = encodeURI(urlList[i].urll + date);
+url = encodeURI(urlList[i].urll + timeString);
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
