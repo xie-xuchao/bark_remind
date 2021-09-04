@@ -5,18 +5,18 @@
  *
  */
 var url = "";
+var date = new Date().toLocaleString();
 const urlList = [
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡"},
-{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡"}
+{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡1"},
+{urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/xxc,速度打卡2"}
 ];
 
-encodeURI("http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡");
 const method = "GET";
 const headers = {"Field": "test-header-param"};
 const data = {"info": "abc"};
 
 for(var i=0,l=urlList.length;i<l;i++){
-url = encodeURI(urlList[i].urll);
+url = encodeURI(urlList[i].urll + date);
 const myRequest = {
     url: url,
     method: method, // Optional, default GET.
@@ -33,4 +33,5 @@ $task.fetch(myRequest).then(response => {
     // reason.error
     $notify("上班打卡提醒", "提醒失败", reason.error); // Error!
     $done();
-})};
+})
+};
