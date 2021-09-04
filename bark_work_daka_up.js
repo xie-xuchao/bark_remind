@@ -45,8 +45,25 @@ var url_down = {
 up()
 
 function up() {
-    $nobyda.notify("上班打卡1", "上班打卡2", "上班打卡3");
-  return $nobyda.done()
+   $nobyda.get(url_up, function(error, response, data) {
+      if (error) {
+        process.result.push({
+          bar: bar.forum_name,
+          errorCode: 999,
+          errorMsg: '接口错误'
+        });
+        checkIsAllProcessed();
+      } else {
+       null;
+      }
+    }) {
+    if (error) {
+      $nobyda.notify("提醒失败1", "提醒失败2", "提醒失败3");
+      return $nobyda.done()
+    } else {
+       $nobyda.notify("提醒成功1", "提醒成功2", "提醒成功3");
+       return $nobyda.done()
+      }
 }
 
 function nobyda() {
