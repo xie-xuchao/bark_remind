@@ -49,7 +49,7 @@ up()
 
 function up() {
     $nobyda.notify("上班打卡1", "上班打卡2", "上班打卡3");
-  
+  return $nobyda.done();
   $nobyda.get(url_up, function(error, response, data) {
       if (error) {
         process.result.push({
