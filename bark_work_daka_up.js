@@ -2,7 +2,9 @@
 /**
  * bark 圈X 上班打卡提醒
  * and handle the response.
+ * urlList的json字符串中，填写提醒人姓名和bark Key
  *
+ * 构造请求如下
  * 55 8 * * 1,2,3,4,5 https://raw.githubusercontent.com/xie-xuchao/bark_remind/main/bark_work_daka_up.js, tag=bark上班打卡提醒, img-url=https://github.com/xie-xuchao/bark_remind/blob/cec68cba0bfe4ff91aaa60824c2e6edf5b435f26/bark.png,enabled=true
  *
  */
@@ -12,6 +14,7 @@ var date = new Date();
 var timeString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+((date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes());  
 var title = timeString + "  上班打卡提醒/";
 var content = "，速度打卡"
+
 const urlList = [
 {name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"},
 {name:"zmx",urll:"http://ddns.cloudslave.cn:8081/NKjPZXKdzpJm5qjiBQQK5X/"}
