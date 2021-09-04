@@ -9,7 +9,7 @@ QuantumultX 本地脚本配置:
 
 [task_local]
 # 贴吧签到
-0 9 * * * bark_work_daka_up.js
+0 9 * * * bark_work_daka.js
 
 */
 var $nobyda = nobyda();
@@ -17,6 +17,7 @@ var server_addr = "http://ddns.cloudslave.cn:8081/";
 var key = "";
 var title = "";
 var content = "";
+
 var process = {
   total: 0,
   result: [
@@ -48,6 +49,7 @@ var url_down = {
   },
   body: ""
 };
+
 if (1) {
   up()
 } else {
@@ -58,7 +60,18 @@ if (1) {
 function up() {
     $nobyda.notify("上班打卡1", "上班打卡2", "上班打卡3");
   
-  $nobyda.get(url_up, null) {
+  $nobyda.get(url_up, function(error, response, data) {
+      if (error) {
+        process.result.push({
+          bar: bar.forum_name,
+          errorCode: 999,
+          errorMsg: '接口错误'
+        });
+        checkIsAllProcessed();
+      } else {
+       null;
+      }
+    }) {
     if (error) {
       $nobyda.notify("提醒失败1", "提醒失败2", "提醒失败3");
       return $nobyda.done()
