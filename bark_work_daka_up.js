@@ -29,8 +29,6 @@ var url_up = {
   url: "http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡",
   headers: {
     "Content-Type": "application/octet-stream",
-    Referer: "https://tieba.baidu.com/index/tbwise/forum",
-    Cookie: cookieVal,
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A366"
   }
 };
@@ -39,7 +37,6 @@ var url_down = {
   method: "POST",
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
-    Cookie: cookieVal,
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/14B100 UCBrowser/10.7.5.650 Mobile"
   },
   body: ""
