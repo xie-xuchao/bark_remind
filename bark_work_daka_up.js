@@ -12,7 +12,13 @@ QuantumultX 本地脚本配置:
 0 9 * * * bark_work_daka.js
 
 */
+
 var $nobyda = nobyda();
+var server_addr = "http://ddns.cloudslave.cn:8081/";
+var key = "";
+var title = "";
+var content = "";
+
 var process = {
   total: 0,
   result: [
@@ -26,7 +32,7 @@ var process = {
   ]
 };
 var url_up = {
-  url: "http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡",
+  url: encodeURI("http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡"),
   headers: {
     "Content-Type": "application/octet-stream",
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16A366"
@@ -37,6 +43,7 @@ var url_down = {
   method: "POST",
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
+    Cookie: cookieVal,
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_1_1 like Mac OS X; zh-CN) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/14B100 UCBrowser/10.7.5.650 Mobile"
   },
   body: ""
@@ -44,8 +51,11 @@ var url_down = {
 
 up()
 
+
 function up() {
-   $nobyda.get(url_up, function(error, response, data) {
+    $nobyda.notify("上班打卡1", "上班打卡2", "上班打卡3");
+    
+  $nobyda.get(url_up, function(error, response, data) {
       if (error) {
         process.result.push({
           bar: bar.forum_name,
