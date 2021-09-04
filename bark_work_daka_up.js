@@ -1,17 +1,30 @@
 
 /**
- * @fileoverview Example to compose HTTP request
+ * bark 圈X 上班打卡提醒
  * and handle the response.
  *
+ * 55 8 * * 1,2,3,4,5 https://raw.githubusercontent.com/xie-xuchao/bark_remind/main/bark_work_daka_up.js, tag=bark上班打卡提醒, img-url=https://github.com/xie-xuchao/bark_remind/blob/cec68cba0bfe4ff91aaa60824c2e6edf5b435f26/bark.png,enabled=true
+ *
  */
+ 
+var url = "";
+var date = new Date();
+var timeString = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+((date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes());  
+var title = timeString + "  上班打卡提醒/";
+var content = "，速度打卡"
+const urlList = [
+{name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"},
+{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/NKjPZXKdzpJm5qjiBQQK5X/"}
+];
 
-const url = encodeURI("http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/上班打卡提醒/速度打卡");
 const method = "GET";
 const headers = {"Field": "test-header-param"};
 const data = {"info": "abc"};
 
+for(var i=0,l=urlList.length;i<l;i++){
+url = urlList[i].urll + title + urlList[i].name + content;
 const myRequest = {
-    url: url,
+    url: encodeURI(url),
     method: method, // Optional, default GET.
     headers: headers, // Optional.
     body: JSON.stringify(data) // Optional.
@@ -26,4 +39,5 @@ $task.fetch(myRequest).then(response => {
     // reason.error
     $notify("上班打卡提醒", "提醒失败", reason.error); // Error!
     $done();
-});
+})
+};
