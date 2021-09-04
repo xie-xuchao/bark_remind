@@ -5,7 +5,7 @@
  * urlList的json字符串中，填写提醒人姓名和bark Key
  *
  * 构造请求如下
- * 05 18 * * 1,2,3,4,5 https://raw.githubusercontent.com/xie-xuchao/bark_remind/main/bark_work_daka_down.js, tag=bark上班打卡提醒, img-url=https://github.com/xie-xuchao/bark_remind/blob/cec68cba0bfe4ff91aaa60824c2e6edf5b435f26/bark.png,enabled=true
+ * 05 18 * * 1,2,3,4,5 https://raw.githubusercontent.com/xie-xuchao/bark_remind/main/bark_work_daka_down.js, tag=bark下班打卡提醒, img-url=https://github.com/xie-xuchao/bark_remind/blob/cec68cba0bfe4ff91aaa60824c2e6edf5b435f26/bark.png,enabled=true
  *
  */
  
