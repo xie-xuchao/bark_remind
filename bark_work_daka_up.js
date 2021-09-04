@@ -13,11 +13,6 @@ QuantumultX 本地脚本配置:
 
 */
 var $nobyda = nobyda();
-var server_addr = "http://ddns.cloudslave.cn:8081/";
-var key = "";
-var title = "";
-var content = "";
-
 var process = {
   total: 0,
   result: [
@@ -50,12 +45,7 @@ var url_down = {
   body: ""
 };
 
-if (1) {
-  up()
-} else {
-  down()
-}
-
+up()
 
 function up() {
     $nobyda.notify("上班打卡1", "上班打卡2", "上班打卡3");
