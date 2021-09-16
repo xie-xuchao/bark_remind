@@ -17,7 +17,7 @@ var content = "，速度打卡"
 
 const urlList = [
 {name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"},
-{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/NKjPZXKdzpJm5qjiBQQK5X/"}
+{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/UgeHzLmuMpMEMcxqTaCWSE/"}
 ];
 
 const method = "GET";
