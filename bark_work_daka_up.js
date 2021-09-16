@@ -16,8 +16,8 @@ var title = timeString + "  上班打卡提醒/";
 var content = "，速度打卡"
 
 const urlList = [
-{name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"},
-{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/UgeHzLmuMpMEMcxqTaCWSE/"}
+{name:"xxc",urll:"http://ddns.cloudslave.cn:8081/7xYty6EbxLfse3tHwBWLjK/"}
+// ,{name:"zmx",urll:"http://ddns.cloudslave.cn:8081/UgeHzLmuMpMEMcxqTaCWSE/"}
 ];
 
 const method = "GET";
